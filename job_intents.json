@@ -1,0 +1,58 @@
+{
+    "intents":[
+        {
+            "tag":"greeting",
+            "patterns": ["Hi there", "How are you", "Is anyone there?", "Hey", "Hola","Hello", "Good Day", "Hi"],
+            "responses": ["Hi stranger", "Im good, How can I help you", "Whatsup Eh?", "Ola", "hey dude", "You Again"]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": ["Bye","See You later", "GoodBye", "Ok bye", "Bye Bye", "Thik hai bhai, ab me chalta hu"],
+            "responses":["See You!", "Have a nice day", "Sure Bye", "Later Dude", "Sayonara", "Pehli Fursat Mei Nikal", "Peace Out", "Ok Mate", "Ciao"]
+        },
+        {
+            "tag": "thanks",
+            "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping out"],
+            "responses":["Happy to Help", "Any Time", "My Pleasure", "You are welcome", "Sure Dude"]
+        },
+        {
+            "tag": "noanswer",
+            "patterns": [],
+            "responses":["Sorry can't Understand You", "Please give me more info", "Not Sure I understand", "I am still here Dude"]
+        },
+        {
+            "tag": "name",
+            "patterns": ["What is your name", "Tell me your name", "Who are you", "Tell me about yourself"],
+            "responses":["I am Baburao", "My name is Baburao", "You can call me Babu bhaiya", "I am Baburao, my friends didn't bother to call me", "Baburao, your very own friend"]
+        },
+        {
+            "tag": "options",
+            "patterns": ["What can you do", "How can you help me", "What do you know", "What is your purpose", "How can you help"],
+            "responses":["I can tell about India", "I can give you interesting facts about India"]
+        },
+        {
+            "tag": "india_info",
+            "patterns": ["India?", "What can you tell me about India", "Ind", "Tell me about India", "What about Ind", "What do you know about India"],
+            "responses":["India is a country in South Asia. It is Seventh-largest country by area. Second most populous country in World. Most populous democracy in the world."]
+        },
+        {
+            "tag": "india_facts",
+            "patterns": ["Indian Facts", "Ind Facts", "Give me some facts about India", "What do you know about India"],
+            "responses":[
+                "Constitution of India is the longest written constitution in the world, including 448 Articles in 22 parts, 12 schedules and 97 amendments. Wriiten by Dr. Bhimrao Ambedkar",
+                "'Jana Gana Mana' is the National Anthem of India, it was originally written in bengali by Rabindranath Tagore.",
+                "The popular game 'snake and ladders' was originated in India.",
+                "India was the first country to mine diamonds.",
+                "Hinduism is one of the oldest religion in the world and its not a true polytheism.",
+                "Sunday ko aa, sunday ko. Mast naha dho ke aana.",
+                "Cows are considered as sacred here.",
+                "It is home to a large variety of religions. Unity in diversity",
+                "It has 29 states. Uttar Pradesh is the largest state in the country.",
+                "New Delhi is the Capital of India. And Mumbai is the financial capital of India",
+                "India got its freedom from British Government on 15th August, 1947 after so many efforts put by our freedom fighters. Pandit Jawaharlal Nehru was the First Prime minister of India.",
+                "National Sport - Hockey, National bird - Peacock, National Animal- Lion, National Flower - Lotus."
+            ]
+        }
+        
+    ]
+}
