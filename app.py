@@ -11,7 +11,7 @@ def index():
 @app.route('/send', methods = ["POST"])
 def send():
     if request.method == 'POST':
-        msg = request.form['msg']
+        msg = request.form['question']
         result = processor.chatbot_response(msg)
     print(result)
     return jsonify({'response':result})
