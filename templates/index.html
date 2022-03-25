@@ -1,88 +1,215 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+
 
     <title>WizBot</title>
 </head>
 <style>
-    .me{
-        float: right;
-        border: solid red 2px;
-        border-radius: 10;
-    }
-    .bot{
-        float:left;
-        border: solid rgb(0, 174, 255) 2px;
-        border-radius: 10;
 
+    body, html {
+        height: 100%;
     }
-    h1 {
-        color:Green;
+
+    * {
+        box-sizing: border-box;
     }
+
     div.col {
         margin:4px, 4px;
         padding:4px;
-        background-color: green;
-        width: 500px;
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        position: relative;
+        max-width: 500px;
         height: 110px;
         overflow-x: hidden;
         overflow-y: auto;
         text-align:justify;
     }
+
+    .bg-image {
+        /* The image used */
+        background-image: url("https://wallpapercave.com/wp/gZKiwHo.jpg");
+
+        /* Add the blur effect */
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .bg-text {
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        position: absolute;
+        margin-top: 90px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    body {
+    background-color: #74EBD5;
+    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+
+    min-height: 100vh;
+    }
+
+    ::-webkit-scrollbar {
+    width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+    width: 5px;
+    background: #f5f5f5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+    width: 1em;
+    background-color: #ddd;
+    outline: 1px solid slategrey;
+    border-radius: 1rem;
+    }
+
+    .text-small {
+    font-size: 0.9rem;
+    }
+
+    .messages-box,
+    .chat-box {
+    height: 510px;
+    overflow-y: scroll;
+    }
+
+    .rounded-lg {
+    border-radius: 0.5rem;
+    }
+
+    input::placeholder {
+    font-size: 0.9rem;
+    color: #999;
+    }
+
+    .pr-5, .px-5 {
+        padding-right: 10rem!important;
+    }
+
+    .pl-5, .px-5 {
+        padding-left: 10rem!important;
+    }
+    
 </style>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">WizBot</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/">Home</a>
+            <a class="nav-item nav-link" href="/about">About</a>
+            <a class="nav-item nav-link" href="/contacts">Contact</a>
+        </div>
+        </div>
+    </nav>
+
+    <div class="bg-image"></div>
     
-    <div class="container">
-        <h1>Welcome to WizBot</h1>
-        <div class="row">
-            <div class="col" style = "border: solid grey 2px; height: 500px;">
-                <p id="response">
+    
+    <div class="bg-text">
+        
+        <main>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Welcome User!!!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                
+            <div class="container py-5 px-4">                  
+                <div class="row rounded-lg overflow-hidden shadow">
+                    <!-- Chat Box-->
+                    <div class="col-12 px-5">
+                        <div class="px-4 py-5 chat-box bg-white" id="response"></div>
+                
+                        <!-- Typing area -->
+                        <div class="input-group">
+                            <input type="text" placeholder="Type a message" id="question" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
+                            <div class="input-group-append">
+                                <button id="button-addon2" class="btn btn-link"> <i class="fa fa-paper-plane"></i></button>
+                            </div>
+                        </div>
                     
-                </p>
+                    </div>
+                </div>
             </div>
-        </div>
-  
-        <div class="row my-5" >
-            <div class="col-lg-9">
-                <input class="form-control" type="text" name="question" id="question">
-            </div>
-            <div class="col-lg-3">
-                <button class="btn btn-primary btn-block" id="submit-button">Send</button>
-            </div>
-        </div>
-        <br>
-          
-  
+
+        </main>
     </div>
-  
+
     <script src="/static/jquery.min.js" ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
         jQuery(document).ready(function(){
   
-            $("#submit-button").click(function(e) {
-            e.preventDefault();
-            $.ajax({
-                type: "POST",
-                url: "/send",
-                data: {
-                    question: $("#question").val()
-                },
-                success: function(result) {
-                  $("#response").append("<br><h2 class='me'>Me: "+$("#question").val()+ "</h2><br><h2 class='bot'>WizBot: "+result.response+"</h2>");
-                  $("#question").val("")
-                },
-                error: function(result) {
-                    alert('error');
+            $("#button-addon2").click(function(e) {
+
+                $quest = $("#question").val()
+                if ($quest != ""){
+                    $send = '<div class="media w-50 ml-auto mb-3"><div class="media-body"><div class="bg-primary rounded py-2 px-3 mb-2"><p class="text-small mb-0 text-white">'+$quest+'</p></div></div></div>'
+                    $("#question").prop("disabled", true);
+                    $("#question").val("WizBot Typing...");
+                    
+                    $("#response").append($send); 
+                    e.preventDefault();
+                    $.ajax({
+                        type: "POST",
+                        url: "/send",
+                        data: {
+                            question: $quest
+                        },
+                        success: function(result) {
+                            $recv = '<div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle"><div class="media-body ml-3"><div class="bg-light rounded py-2 px-3 mb-2"><p class="text-small mb-0 text-muted">'+result.response+'</p></div></div></div>';
+                            $("#response").append($recv);
+                            $("#response").scrollTop($("#response").height());
+                            $("#question").prop("disabled", false);
+                            $("#question").val("")
+                        },
+                        error: function(result) {
+                            alert('error');
+                        }
+                    });
+                }
+                else{
+                    return
                 }
             });
-          });
         });
     </script>
 
