@@ -39,7 +39,7 @@ six==1.16.0
 tensorboard==2.8.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
-tensorflow @ file:///E:/SEM8/NLP/MP/chatbot/venv/Lib/site-packages/tensorflow-2.8.0-cp39-cp39-win_amd64.whl
+tensorflow==2.8.0
 tensorflow-io-gcs-filesystem==0.24.0
 termcolor==1.1.0
 tf-estimator-nightly==2.8.0.dev2021122109
