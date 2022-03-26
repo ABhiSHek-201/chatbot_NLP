@@ -1,5 +1,3 @@
-from tkinter import W
-from unittest import result
 import nltk
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
